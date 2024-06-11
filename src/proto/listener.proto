@@ -8,14 +8,13 @@ service EventListenerService {
 }
 
 message StartListenerDto {
-  string queue = 1;
-  string chainId = 2;
-  repeated string eventNames = 3;
-  string contractAddress = 4;
-  int32 startBlock = 5;
-  int32 batchSize = 6;
-  string abi = 7;
-  string rpc = 8;
+  string chainId = 1;
+  repeated string eventNames = 2;
+  string contractAddress = 3;
+  int32 startBlock = 4;
+  int32 batchSize = 5;
+  string abi = 6;
+  string rpc = 7;
 }
 
 message StopListenerDto {
