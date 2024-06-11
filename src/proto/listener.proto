@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package listener;
+
+service EventListenerService {
+  rpc StartListener (StartListenerDto) returns (ListenerResponse);
+  rpc StopListener(StopListenerDto) returns (ListenerResponse);
+}
+
+message StartListenerDto {
+  string queue = 1;
+  string chainId = 2;
+  repeated string eventNames = 3;
+  string contractAddress = 4;
+  int32 startBlock = 5;
+  int32 batchSize = 6;
+  string abi = 7;
+  string rpc = 8;
+}
+
+message StopListenerDto {
+  string contractAddress = 1;
+  string chainId = 2;
+}
+
+message ListenerResponse {
+  bool success = 1;
+  string message = 2;
+}
